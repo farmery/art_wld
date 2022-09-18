@@ -1,7 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:art_wld/modules/art_details/art_details_page.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_bounce/flutter_bounce.dart' as on_tap;
+import '../../../global_widgets/jiggle_controller.dart' as jiggle;
 import '../../../models/artwork/artwork.dart';
 
 class ArtworkItemWidget extends StatelessWidget {
@@ -9,7 +9,7 @@ class ArtworkItemWidget extends StatelessWidget {
   final Artwork artwork;
   @override
   Widget build(BuildContext context) {
-    return on_tap.Bounce(
+    return jiggle.Bounce(
       duration: const Duration(milliseconds: 200),
       onPressed: () {
         Navigator.push(context, ArtDetailsPage.route(artwork));

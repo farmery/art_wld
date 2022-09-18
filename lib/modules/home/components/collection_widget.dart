@@ -1,6 +1,5 @@
 import 'package:art_wld/models/artwork/artwork.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bounce/flutter_bounce.dart';
 import '../../../utils/text_styles.dart';
 
 class CollectionWidget extends StatelessWidget {

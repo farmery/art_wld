@@ -16,6 +16,14 @@ class CartVm extends StateNotifier<List<Artwork>> {
   clearCart() {
     state = [];
   }
+
+  int get totalPrice {
+    int totalPrice = 0;
+    for (var item in state) {
+      totalPrice += item.price!;
+    }
+    return totalPrice;
+  }
 }
 
 final cartVmProvider = StateNotifierProvider<CartVm, List<Artwork>>((ref) {

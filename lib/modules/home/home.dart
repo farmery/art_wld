@@ -66,26 +66,17 @@ class _HomeState extends ConsumerState<Home> {
                     const SizedBox(height: 16),
                     Row(
                       children: [
-                        SpinPerfect(
-                          spins: 1,
-                          delay: const Duration(milliseconds: 1200),
-                          infinite: false,
-                          animate: true,
-                          duration: const Duration(milliseconds: 300),
-                          child: Hero(
-                            tag: 'logo',
-                            child: Material(
-                              color: Colors.transparent,
-                              child: Text(
-                                'ArtWld',
-                                style: styles.largeText,
-                              ),
-                            ),
+                        Material(
+                          color: Colors.transparent,
+                          child: Text(
+                            'ArtWld',
+                            style: styles.largeText,
                           ),
                         ),
                         SizedBox(
-                            width: 40,
-                            child: Lottie.asset('assets/images/artwld.json'))
+                          width: 40,
+                          child: Lottie.asset('assets/images/artwld.json'),
+                        )
                       ],
                     ),
                   ],

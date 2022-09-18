@@ -109,8 +109,7 @@ class _ArtDetailsPageState extends ConsumerState<ArtDetailsPage> {
                   },
                   child: FadeInImage(
                     fit: BoxFit.cover,
-                    placeholder:
-                        const AssetImage('assets/images/placeholder.png'),
+                    placeholder: NetworkImage(widget.artwork.thumbnail!),
                     image: NetworkImage(widget.artwork.imgUrl!),
                   ),
                 ),

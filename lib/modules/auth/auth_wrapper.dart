@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:art_wld/modules/auth/auth_controller.dart';
 import 'package:art_wld/modules/home/home.dart';
 import 'package:art_wld/utils/text_styles.dart';
@@ -6,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:lottie/lottie.dart';
 import '../../global_widgets/btn.dart';
 
 class AuthWrapper extends ConsumerWidget {
@@ -83,8 +85,19 @@ class AuthPageRoute extends ConsumerWidget {
               width: MediaQuery.of(context).size.width * 0.7,
               alignment: Alignment.center,
               color: Colors.white.withOpacity(0.5),
-              child: Hero(
-                  tag: 'logo', child: Text('ArtWld', style: styles.largeText)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('ArtWld', style: styles.largeText),
+                  Bounce(
+                    delay: const Duration(milliseconds: 2000),
+                    child: SizedBox(
+                      width: 40,
+                      child: Lottie.asset('assets/images/artwld.json'),
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
           Positioned(

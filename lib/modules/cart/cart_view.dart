@@ -1,9 +1,9 @@
 import 'package:art_wld/global_widgets/btn.dart';
 import 'package:art_wld/modules/cart/cart_vm.dart';
 import 'package:art_wld/utils/app_colors.dart';
-import 'package:art_wld/utils/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intl/intl.dart';
 import 'package:lottie/lottie.dart';
 
 import 'components/cart_item.dart';
@@ -28,6 +28,8 @@ class CartView extends ConsumerWidget {
     final cartVm = ref.read(cartVmProvider.notifier);
     final artworksInCart = ref.watch(cartVmProvider);
     final colors = AppColors();
+    final currency = NumberFormat("#,##0.00", "en_US");
+
     return Scaffold(
       backgroundColor: colors.primary,
       appBar: AppBar(
@@ -74,7 +76,10 @@ class CartView extends ConsumerWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Btn(label: 'Checkout', onTap: () {}),
+                  child: Btn(
+                    label: 'Checkout \$${currency.format(cartVm.totalPrice)}',
+                    onTap: () {},
+                  ),
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).padding.bottom,
